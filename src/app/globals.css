@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #87CEEB; /* Primary Background */
+  --foreground: #000000; /* Text Primary */
+  --ubego-primary: #FF9500;
+  --ubego-bg: #87CEEB;
+  --ubego-accent: #FF0000;
+  --ubego-text-secondary: #333333;
+  --ubego-white: #FFFFFF;
+}
+
+@theme {
+  --color-primary: var(--ubego-primary);
+  --color-accent: var(--ubego-accent);
+  --color-secondary-text: var(--ubego-text-secondary);
+  --color-white: var(--ubego-white);
+  
+  --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  --animate-gentle-float: gentle-float 6s ease-in-out infinite;
+  
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+body {
+  background-color: var(--ubego-bg);
+  color: var(--ubego-text-primary);
+  font-family: var(--font-sans);
+}
