@@ -90,7 +90,7 @@ The application follows the **Ubego Children's Service Design System**.
     *   **Left Column (Inputs):** Grouped by "KPI Plans", "Actual Results", and "Base". All inputs have tooltips explaining the metric.
     *   **Right Column (Results):** Grid of cards showing rewards (Meeting, Sign, Launch). The Launch group spans full width on smaller screens to prevent overlap.
 4.  **Footer:**
-    *   Copyright info ("Ubego Children's Service").
+    *   Copyright info ("Ubego - квест-экскурсии в реальной жизни").
     *   Links to Privacy Policy (placeholder).
 
 ---

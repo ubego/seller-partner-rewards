@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-lg md:text-2xl text-[var(--ubego-text-primary)] font-medium max-w-2xl mx-auto leading-relaxed"
         >
-          Рассчитайте своё вознаграждение за подключение музеев и квестов
+          Рассчитайте своё вознаграждение за подключение музеев, торговых центров и других объектов к платформе Ubego. Введите свои показатели и узнайте, сколько вы заработаете!
         </motion.p>
       </div>
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Ubego Children's Service Calculator",
+  title: "Ubego - квест-экскурсии в реальной жизни",
   description: "Калькулятор премии для продавцов-партнеров Ubego",
 };
 
