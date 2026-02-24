@@ -82,7 +82,6 @@ The application follows the **Ubego Children's Service Design System**.
 1.  **Header:**
     *   "Ubego" text logo.
     *   Navigation link to main site (`ubego.quest`).
-    *   User profile icon placeholder.
 2.  **Hero Section:**
     *   Large Title: "КАЛЬКУЛЯТОР ПРЕМИИ".
     *   Animated background elements (floating shapes/clouds) calculation concept.
@@ -91,14 +90,13 @@ The application follows the **Ubego Children's Service Design System**.
     *   **Right Column (Results):** Grid of cards showing rewards (Meeting, Sign, Launch). The Launch group spans full width on smaller screens to prevent overlap.
 4.  **Footer:**
     *   Copyright info ("Ubego - квест-экскурсии в реальной жизни").
-    *   Links to Privacy Policy (placeholder).
 
 ---
 
 ## 4. Technical Specifications
 
 ### 4.1 Technology Stack
-*   **Framework:** Next.js 15 (App Router strategy).
+*   **Framework:** Next.js 16 (App Router strategy).
 *   **Language:** TypeScript.
 *   **Styling:** Tailwind CSS v4.
 *   **Icons:** Lucide React.

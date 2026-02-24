@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { User } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -16,12 +15,6 @@ export default function Header() {
           ubego.quest
         </Link>
       </nav>
-
-      <div className="flex items-center space-x-4">
-        <button className="bg-white/20 p-2 rounded-full hover:bg-white/30 transition-colors">
-          <User className="text-white w-6 h-6" />
-        </button>
-      </div>
     </header>
   );
 }

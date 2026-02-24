@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section className="relative h-[60vh] w-full bg-[var(--ubego-bg)] flex flex-col justify-center items-center overflow-hidden">
-      {/* Background Illustrations Placeholder - Using CSS shapes for cartoonish vibe */}
+      {/* Background Illustrations - Using CSS shapes for cartoonish vibe */}
       <motion.div 
         className="absolute top-10 left-10 w-32 h-32 bg-white/30 rounded-full blur-xl"
         animate={{ y: [0, -20, 0] }}

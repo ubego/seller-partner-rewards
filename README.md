@@ -4,7 +4,7 @@ Single Page Application (SPA) для расчета вознаграждения
 
 ## Технологии
 
-- **Framework**: Next.js 15 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **Animations**: Framer Motion
