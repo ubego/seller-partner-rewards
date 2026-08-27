@@ -31,9 +31,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg md:text-2xl text-[var(--ubego-text-primary)] font-medium max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-2xl text-[var(--ubego-text-primary)] font-medium max-w-3xl mx-auto leading-relaxed"
         >
-          Рассчитайте своё вознаграждение за подключение музеев, торговых центров и других объектов к платформе Ubego. Введите свои показатели и узнайте, сколько вы заработаете!
+          Рассчитайте вознаграждение seller manager за встречи, договоры и запуски.
+          <span className="block mt-3 text-base md:text-xl font-bold">
+            12 встреч → 3 пилотных договора → 2 полных договора
+          </span>
         </motion.p>
       </div>
 
