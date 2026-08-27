@@ -238,6 +238,17 @@ export default function Calculator() {
                 {DIRECT_FULL_LAUNCH_HINT}
               </p>
             </div>
+
+            <div className="space-y-4 pt-4">
+              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest border-b pb-2">База</h3>
+              <InputField
+                label="Оклад"
+                name="baseSalary"
+                value={inputs.baseSalary}
+                onChange={handleChange}
+                hint="Фиксированная базовая часть зарплаты. Не зависит от KPI и суммируется с премией."
+              />
+            </div>
           </div>
         </div>
 
@@ -250,6 +261,12 @@ export default function Calculator() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ResultCard
+                title="Оклад"
+                value={results.baseSalary}
+                formula={`Фиксированная базовая часть: ${formatNumber(results.baseSalary)} ₽`}
+              />
+
               <ResultCard
                 title="Квалифицированные встречи"
                 value={results.meetings.payment}
@@ -331,7 +348,7 @@ export default function Calculator() {
                 <div className="relative z-10 p-8 text-white flex flex-col md:flex-row justify-between items-center">
                   <div>
                     <h3 className="text-lg font-bold uppercase opacity-90 mb-1">Итоговая выплата</h3>
-                    <p className="text-sm opacity-75">Встречи, договоры и запуски суммируются независимо</p>
+                    <p className="text-sm opacity-75">Включая оклад {formatMoney(results.baseSalary)}</p>
                   </div>
                   <div className="text-5xl md:text-6xl font-extrabold tracking-tight mt-4 md:mt-0 drop-shadow-md">
                     {formatMoney(results.total)}
@@ -342,6 +359,7 @@ export default function Calculator() {
                   <Tooltip
                     content={
                       <div className="space-y-1 text-sm">
+                        <div>Оклад: {formatMoney(results.baseSalary)}</div>
                         <div>Встречи: {formatMoney(results.meetings.payment)}</div>
                         <div>Бонус за план встреч: {formatMoney(results.meetingsKpiBonus)}</div>
                         <div>Пилотные договоры: {formatMoney(results.pilotContracts.payment)}</div>

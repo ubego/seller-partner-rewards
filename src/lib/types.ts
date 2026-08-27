@@ -1,4 +1,5 @@
 export interface CalculatorInputs {
+  baseSalary: number;
   planMeetings: number;
   planPilotContracts: number;
   planFullContracts: number;
@@ -33,6 +34,7 @@ export interface KpiBreakdown {
 }
 
 export interface CalculatorResults {
+  baseSalary: number;
   meetings: KpiBreakdown;
   meetingsKpiBonus: number;
   meetingsBonusUnlocked: boolean;

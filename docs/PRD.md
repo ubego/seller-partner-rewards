@@ -51,6 +51,7 @@ Contract rewards and launch rewards are independent and additive. Museums that r
 
 | Category | Parameter | Default |
 | :--- | :--- | ---: |
+| **Base** | Base salary | 10,000 ₽ |
 | **KPI Plans** | Qualified Meetings plan | 12 |
 | | Pilot Contracts plan | 3 |
 | | Full Contracts plan | 2 |
@@ -68,6 +69,7 @@ A **Direct Full Contract** also counts toward the Pilot Contract KPI. A **Direct
 
 | Component | Base reward | KPI coefficient |
 | :--- | ---: | ---: |
+| Base salary | 10,000 ₽ | No |
 | Qualified Meeting | 3,000 ₽ | Yes |
 | Pilot Contract Signed | 10,000 ₽ | Yes |
 | Pilot Launch | 3,000 ₽ | No |
@@ -126,7 +128,7 @@ Signing the contract, publishing the quest only on Ubego, preparing materials wi
 
 ### 3.7 Standard Full-Time Scenario
 
-12 meetings, 3 Pilot Contracts, 3 Pilot Launches, 2 Full Contracts, 2 Full Commercial Launches → **196,800 ₽**.
+Base salary 10,000 ₽ + 12 meetings, 3 Pilot Contracts, 3 Pilot Launches, 2 Full Contracts, 2 Full Commercial Launches → **206,800 ₽**.
 
 Control cases:
 

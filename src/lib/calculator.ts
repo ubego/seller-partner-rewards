@@ -6,12 +6,14 @@ export const PILOT_LAUNCH_RATE = 3000;
 export const FULL_CONTRACT_RATE = 20000;
 export const FULL_LAUNCH_RATE = 20000;
 export const MEETINGS_KPI_BONUS = 10000;
+export const DEFAULT_BASE_SALARY = 10000;
 
 export const DEFAULT_PLAN_MEETINGS = 12;
 export const DEFAULT_PLAN_PILOT_CONTRACTS = 3;
 export const DEFAULT_PLAN_FULL_CONTRACTS = 2;
 
 export const DEFAULT_INPUTS: CalculatorInputs = {
+  baseSalary: DEFAULT_BASE_SALARY,
   planMeetings: DEFAULT_PLAN_MEETINGS,
   planPilotContracts: DEFAULT_PLAN_PILOT_CONTRACTS,
   planFullContracts: DEFAULT_PLAN_FULL_CONTRACTS,
@@ -122,8 +124,10 @@ export function calculateReward(inputs: CalculatorInputs): CalculatorResults {
 
   const pilotLaunchesPayment = effectivePilotLaunches * PILOT_LAUNCH_RATE;
   const fullLaunchesPayment = effectiveFullLaunches * FULL_LAUNCH_RATE;
+  const baseSalary = clampNonNegative(inputs.baseSalary);
 
   const total =
+    baseSalary +
     meetingsKpi.payment +
     meetingsKpiBonus +
     pilotContracts.payment +
@@ -132,6 +136,7 @@ export function calculateReward(inputs: CalculatorInputs): CalculatorResults {
     fullLaunchesPayment;
 
   return {
+    baseSalary,
     meetings: meetingsKpi,
     meetingsKpiBonus,
     meetingsBonusUnlocked,
