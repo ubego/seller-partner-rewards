@@ -16,6 +16,8 @@ export interface CalculatorInputs {
   fullLaunches: number;
   /** Subset of fullLaunches with no previously paid Pilot Launch. */
   directFullLaunches: number;
+  /** True when CRM, reporting and documentation are kept correctly and on time. */
+  salaryConditionsMet: boolean;
 }
 
 export interface NextCoefficientStep {
@@ -35,6 +37,7 @@ export interface KpiBreakdown {
 
 export interface CalculatorResults {
   baseSalary: number;
+  salaryConditionsMet: boolean;
   meetings: KpiBreakdown;
   meetingsKpiBonus: number;
   meetingsBonusUnlocked: boolean;

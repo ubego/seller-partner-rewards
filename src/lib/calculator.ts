@@ -24,6 +24,7 @@ export const DEFAULT_INPUTS: CalculatorInputs = {
   pilotLaunches: DEFAULT_PLAN_PILOT_CONTRACTS,
   fullLaunches: DEFAULT_PLAN_FULL_CONTRACTS,
   directFullLaunches: 0,
+  salaryConditionsMet: true,
 };
 
 const NEXT_TIERS = [
@@ -124,7 +125,8 @@ export function calculateReward(inputs: CalculatorInputs): CalculatorResults {
 
   const pilotLaunchesPayment = effectivePilotLaunches * PILOT_LAUNCH_RATE;
   const fullLaunchesPayment = effectiveFullLaunches * FULL_LAUNCH_RATE;
-  const baseSalary = clampNonNegative(inputs.baseSalary);
+  const salaryConditionsMet = Boolean(inputs.salaryConditionsMet);
+  const baseSalary = salaryConditionsMet ? clampNonNegative(inputs.baseSalary) : 0;
 
   const total =
     baseSalary +
@@ -137,6 +139,7 @@ export function calculateReward(inputs: CalculatorInputs): CalculatorResults {
 
   return {
     baseSalary,
+    salaryConditionsMet,
     meetings: meetingsKpi,
     meetingsKpiBonus,
     meetingsBonusUnlocked,

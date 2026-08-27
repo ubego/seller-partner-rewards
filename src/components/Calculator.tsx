@@ -13,7 +13,7 @@ import {
   PILOT_LAUNCH_RATE,
 } from '@/lib/calculator';
 import { CalculatorInputs } from '@/lib/types';
-import { formatCoefficient, formatMoney, formatNumber, pluralize } from '@/lib/format';
+import { formatCoefficient, formatMoney, formatNumber } from '@/lib/format';
 import { Info, Sparkles } from 'lucide-react';
 import { Tooltip } from '@/components/ui/Tooltip';
 import { KpiProgress } from '@/components/KpiProgress';
@@ -26,6 +26,9 @@ const FULL_LAUNCH_DEFINITION =
 
 const DIRECT_FULL_CONTRACT_HINT =
   'Если музей сразу подписывает полный договор, без отдельного пилотного, он учитывается и в KPI пилотных договоров, и в KPI полных договоров. Ранее выплаченные части повторно не начисляются.';
+
+const BASE_SALARY_DESCRIPTION =
+  'Оклад — фиксированная базовая часть заработной платы. Он выплачивается за корректное и своевременное ведение CRM, отчётности и документации и не зависит от KPI по встречам, договорам и запускам. Если CRM, отчётность или документация ведутся некорректно или несвоевременно, оклад за месяц не выплачивается.';
 
 type InputName = keyof CalculatorInputs;
 
@@ -128,8 +131,6 @@ export default function Calculator() {
     });
   };
 
-  const funnelLabel = `${inputs.planMeetings} ${pluralize(inputs.planMeetings, 'встреча', 'встречи', 'встреч')} → ${inputs.planPilotContracts} ${pluralize(inputs.planPilotContracts, 'пилотный договор', 'пилотных договора', 'пилотных договоров')} → ${inputs.planFullContracts} ${pluralize(inputs.planFullContracts, 'полный договор', 'полных договора', 'полных договоров')}`;
-
   return (
     <section className="max-w-7xl mx-auto px-4 py-12 -mt-20 relative z-20">
       <div className="grid lg:grid-cols-12 gap-8">
@@ -139,7 +140,9 @@ export default function Calculator() {
             Входные данные
           </h2>
           <p className="text-sm text-slate-500 mb-6">
-            Норма для full-time: <span className="font-semibold text-slate-700">{funnelLabel}</span>
+            <span className="font-semibold text-slate-700">
+              Квалифицированные встречи → пилотные договоры → полные договоры
+            </span>
           </p>
 
           <div className="space-y-6">
@@ -246,8 +249,25 @@ export default function Calculator() {
                 name="baseSalary"
                 value={inputs.baseSalary}
                 onChange={handleChange}
-                hint="Фиксированная базовая часть зарплаты. Не зависит от KPI и суммируется с премией."
+                hint={BASE_SALARY_DESCRIPTION}
               />
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="salaryConditionsMet"
+                  checked={inputs.salaryConditionsMet}
+                  onChange={(e) =>
+                    setInputs((prev) => ({ ...prev, salaryConditionsMet: e.target.checked }))
+                  }
+                  className="mt-1 h-4 w-4 rounded border-slate-300 text-[var(--ubego-primary)] focus:ring-[var(--ubego-primary)]"
+                />
+                <span className="text-sm text-slate-700 leading-relaxed">
+                  CRM, отчётность и документация ведутся корректно и своевременно
+                </span>
+              </label>
+              <p className="text-xs text-slate-500 leading-relaxed bg-slate-50 rounded-lg p-3">
+                {BASE_SALARY_DESCRIPTION}
+              </p>
             </div>
           </div>
         </div>
@@ -264,8 +284,15 @@ export default function Calculator() {
               <ResultCard
                 title="Оклад"
                 value={results.baseSalary}
-                formula={`Фиксированная базовая часть: ${formatNumber(results.baseSalary)} ₽`}
-              />
+                highlight={!results.salaryConditionsMet}
+                formula={
+                  results.salaryConditionsMet
+                    ? `Условия выполнены. Фиксированная базовая часть: ${formatNumber(inputs.baseSalary)} ₽`
+                    : 'CRM, отчётность или документация ведутся некорректно или несвоевременно. Оклад не выплачивается: 0 ₽'
+                }
+              >
+                <p className="mt-4 text-sm text-slate-600 leading-relaxed">{BASE_SALARY_DESCRIPTION}</p>
+              </ResultCard>
 
               <ResultCard
                 title="Квалифицированные встречи"
@@ -348,7 +375,11 @@ export default function Calculator() {
                 <div className="relative z-10 p-8 text-white flex flex-col md:flex-row justify-between items-center">
                   <div>
                     <h3 className="text-lg font-bold uppercase opacity-90 mb-1">Итоговая выплата</h3>
-                    <p className="text-sm opacity-75">Включая оклад {formatMoney(results.baseSalary)}</p>
+                    <p className="text-sm opacity-75">
+                      {results.salaryConditionsMet
+                        ? `Включая оклад ${formatMoney(results.baseSalary)}`
+                        : 'Оклад не выплачен: условия по CRM, отчётности и документации не выполнены'}
+                    </p>
                   </div>
                   <div className="text-5xl md:text-6xl font-extrabold tracking-tight mt-4 md:mt-0 drop-shadow-md">
                     {formatMoney(results.total)}

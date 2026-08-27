@@ -35,7 +35,7 @@ export default function Hero() {
         >
           Рассчитайте вознаграждение seller manager за встречи, договоры и запуски.
           <span className="block mt-3 text-base md:text-xl font-bold">
-            12 встреч → 3 пилотных договора → 2 полных договора
+            Квалифицированные встречи → пилотные договоры → полные договоры
           </span>
         </motion.p>
       </div>

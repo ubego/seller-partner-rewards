@@ -77,6 +77,8 @@ A **Direct Full Contract** also counts toward the Pilot Contract KPI. A **Direct
 | Full Commercial Launch | 20,000 ₽ | No |
 | Qualified Meetings KPI Completion Bonus | 10,000 ₽ / month | No |
 
+Base salary is paid for correct and timely CRM, reporting, and documentation. If those conditions are not met, the salary component is 0 ₽ for the month.
+
 ### 3.3 KPI Coefficient Stairway
 
 Each KPI is calculated independently.
@@ -120,7 +122,7 @@ Signing the contract, publishing the quest only on Ubego, preparing materials wi
 
 ### 3.6 Output & Visualization
 *   Real-time calculation on input change.
-*   Funnel presented as **12 встреч → 3 пилотных договора → 2 полных договора** (updates with plan inputs).
+*   Funnel presented without plan numbers: **квалифицированные встречи → пилотные договоры → полные договоры**.
 *   For each KPI-controlled component: actual, plan, achievement %, coefficient, additional results to the next coefficient.
 *   Highlight when the meetings plan (and its bonus) is achieved.
 *   Tooltips and on-page hints for formulas, launch definition, and the direct Full Launch rule.
