@@ -250,6 +250,13 @@ export default function Calculator() {
                 onChange={handleChange}
                 hint={BASE_SALARY_DESCRIPTION}
               />
+              <InputField
+                label="Бонус за план встреч"
+                name="meetingsKpiBonus"
+                value={inputs.meetingsKpiBonus}
+                onChange={handleChange}
+                hint="Фиксированный бонус, который добавляется к базовой части при выполнении плана квалифицированных встреч. Стандарт: 10 000 ₽."
+              />
               <label className="flex items-start gap-3 cursor-pointer">
                 <input
                   type="checkbox"

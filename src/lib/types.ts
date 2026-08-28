@@ -1,5 +1,6 @@
 export interface CalculatorInputs {
   baseSalary: number;
+  meetingsKpiBonus: number;
   planMeetings: number;
   planPilotContracts: number;
   planFullContracts: number;

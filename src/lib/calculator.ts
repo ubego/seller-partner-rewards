@@ -14,6 +14,7 @@ export const DEFAULT_PLAN_FULL_CONTRACTS = 2;
 
 export const DEFAULT_INPUTS: CalculatorInputs = {
   baseSalary: DEFAULT_BASE_SALARY,
+  meetingsKpiBonus: MEETINGS_KPI_BONUS,
   planMeetings: DEFAULT_PLAN_MEETINGS,
   planPilotContracts: DEFAULT_PLAN_PILOT_CONTRACTS,
   planFullContracts: DEFAULT_PLAN_FULL_CONTRACTS,
@@ -110,7 +111,7 @@ export function calculateReward(inputs: CalculatorInputs): CalculatorResults {
 
   const meetingsKpi = buildKpi(meetings, planMeetings, MEETING_REWARD_RATE);
   const meetingsBonusUnlocked = planMeetings > 0 && meetings >= planMeetings;
-  const meetingsKpiBonus = meetingsBonusUnlocked ? MEETINGS_KPI_BONUS : 0;
+  const meetingsKpiBonus = meetingsBonusUnlocked ? clampNonNegative(inputs.meetingsKpiBonus) : 0;
 
   const pilotContracts = buildKpi(
     effectivePilotContracts,
