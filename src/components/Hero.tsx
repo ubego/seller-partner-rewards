@@ -34,9 +34,6 @@ export default function Hero() {
           className="text-lg md:text-2xl text-[var(--ubego-text-primary)] font-medium max-w-3xl mx-auto leading-relaxed"
         >
           Рассчитайте вознаграждение seller manager за встречи, договоры и запуски.
-          <span className="block mt-3 text-base md:text-xl font-bold">
-            Квалифицированные встречи → пилотные договоры → полные договоры
-          </span>
         </motion.p>
       </div>
 

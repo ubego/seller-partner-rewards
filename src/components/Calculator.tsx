@@ -8,7 +8,6 @@ import {
   FULL_CONTRACT_RATE,
   FULL_LAUNCH_RATE,
   MEETING_REWARD_RATE,
-  MEETINGS_KPI_BONUS,
   PILOT_CONTRACT_RATE,
   PILOT_LAUNCH_RATE,
 } from '@/lib/calculator';
@@ -282,16 +281,37 @@ export default function Calculator() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <ResultCard
-                title="Оклад"
-                value={results.baseSalary}
-                highlight={!results.salaryConditionsMet}
+                title="Базовая часть"
+                value={results.baseSalary + results.meetingsKpiBonus}
+                highlight={!results.salaryConditionsMet || results.meetingsBonusUnlocked}
                 formula={
-                  results.salaryConditionsMet
-                    ? `Условия выполнены. Фиксированная базовая часть: ${formatNumber(inputs.baseSalary)} ₽`
-                    : 'CRM, отчётность или документация ведутся некорректно или несвоевременно. Оклад не выплачивается: 0 ₽'
+                  `${results.salaryConditionsMet ? `Оклад: ${formatNumber(results.baseSalary)} ₽` : 'Оклад не выплачен: 0 ₽'}\nБонус за выполнение плана встреч: ${formatNumber(results.meetingsKpiBonus)} ₽`
                 }
               >
-                <p className="mt-4 text-sm text-slate-600 leading-relaxed">{BASE_SALARY_DESCRIPTION}</p>
+                <div className="mt-4 space-y-3 text-sm leading-relaxed">
+                  <div className="rounded-lg bg-slate-50 border border-slate-100 p-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="font-semibold text-slate-700">Оклад</span>
+                      <span className="font-bold text-slate-800">{formatMoney(results.baseSalary)}</span>
+                    </div>
+                    <p className="mt-1 text-slate-500">{BASE_SALARY_DESCRIPTION}</p>
+                  </div>
+                  <div className={`rounded-lg border p-3 ${results.meetingsBonusUnlocked ? 'border-amber-200 bg-amber-50' : 'border-slate-100 bg-white'}`}>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className={`font-semibold ${results.meetingsBonusUnlocked ? 'text-amber-800' : 'text-slate-700'}`}>
+                        Бонус за выполнение плана встреч
+                      </span>
+                      <span className={`font-bold ${results.meetingsBonusUnlocked ? 'text-amber-800' : 'text-slate-800'}`}>
+                        {formatMoney(results.meetingsKpiBonus)}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-slate-500">
+                      {results.meetingsBonusUnlocked
+                        ? `План выполнен: ${inputs.meetings} из ${inputs.planMeetings}`
+                        : `Выплачивается при выполнении плана: ${inputs.meetings} из ${inputs.planMeetings}`}
+                    </p>
+                  </div>
+                </div>
               </ResultCard>
 
               <ResultCard
@@ -303,20 +323,8 @@ export default function Calculator() {
                 <KpiProgress
                   kpi={results.meetings}
                   unit={['встреча', 'встречи', 'встреч']}
-                  meetingsBonus={{ unlocked: results.meetingsBonusUnlocked, amount: MEETINGS_KPI_BONUS }}
                 />
               </ResultCard>
-
-              <ResultCard
-                title="Бонус за KPI по встречам"
-                value={results.meetingsKpiBonus}
-                highlight={results.meetingsBonusUnlocked}
-                formula={
-                  results.meetingsBonusUnlocked
-                    ? `План (${inputs.planMeetings}) выполнен. Фиксированный бонус ${formatNumber(MEETINGS_KPI_BONUS)} ₽`
-                    : `План (${inputs.planMeetings}) не выполнен. 0 ₽`
-                }
-              />
 
               <ResultCard
                 title="Пилотные договоры"
@@ -332,15 +340,6 @@ export default function Calculator() {
               </ResultCard>
 
               <ResultCard
-                title="Полные договоры"
-                value={results.fullContracts.payment}
-                highlight={results.fullContracts.actual >= results.fullContracts.plan && results.fullContracts.plan > 0}
-                formula={`${results.fullContracts.actual} × ${formatNumber(FULL_CONTRACT_RATE)} ₽ × ${formatCoefficient(results.fullContracts.coefficient)}`}
-              >
-                <KpiProgress kpi={results.fullContracts} unit={['договор', 'договора', 'договоров']} />
-              </ResultCard>
-
-              <ResultCard
                 title="Пилотные запуски"
                 value={results.pilotLaunchesPayment}
                 highlight={results.impliedPilotLaunches > 0}
@@ -353,6 +352,15 @@ export default function Calculator() {
                 {results.impliedPilotLaunches > 0 && (
                   <p className="mt-4 text-sm text-slate-600 leading-relaxed">{DIRECT_FULL_LAUNCH_HINT}</p>
                 )}
+              </ResultCard>
+
+              <ResultCard
+                title="Полные договоры"
+                value={results.fullContracts.payment}
+                highlight={results.fullContracts.actual >= results.fullContracts.plan && results.fullContracts.plan > 0}
+                formula={`${results.fullContracts.actual} × ${formatNumber(FULL_CONTRACT_RATE)} ₽ × ${formatCoefficient(results.fullContracts.coefficient)}`}
+              >
+                <KpiProgress kpi={results.fullContracts} unit={['договор', 'договора', 'договоров']} />
               </ResultCard>
 
               <ResultCard
