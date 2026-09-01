@@ -8,9 +8,9 @@ export const FULL_LAUNCH_RATE = 20000;
 export const MEETINGS_KPI_BONUS = 10000;
 export const DEFAULT_BASE_SALARY = 10000;
 
-export const DEFAULT_PLAN_MEETINGS = 12;
-export const DEFAULT_PLAN_PILOT_CONTRACTS = 3;
-export const DEFAULT_PLAN_FULL_CONTRACTS = 2;
+export const DEFAULT_PLAN_MEETINGS = 8;
+export const DEFAULT_PLAN_PILOT_CONTRACTS = 2;
+export const DEFAULT_PLAN_FULL_CONTRACTS = 1;
 
 export const DEFAULT_INPUTS: CalculatorInputs = {
   baseSalary: DEFAULT_BASE_SALARY,

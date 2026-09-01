@@ -14,7 +14,7 @@ The model reflects a realistic workload for a **full-time sales and partner rela
 
 The standard monthly sales expectation is:
 
-**12 Qualified Meetings → 3 Pilot Contracts → 2 Full Contracts**
+**8 Qualified Meetings → 2 Pilot Contracts → 1 Full Contract**
 
 Contract signing and operational launch are two separate, additive reward tracks.
 
@@ -52,15 +52,15 @@ Contract rewards and launch rewards are independent and additive. Museums that r
 | Category | Parameter | Default |
 | :--- | :--- | ---: |
 | **Base** | Base salary | 10,000 ₽ |
-| **KPI Plans** | Qualified Meetings plan | 12 |
-| | Pilot Contracts plan | 3 |
-| | Full Contracts plan | 2 |
-| **Contract actuals** | Qualified Meetings | 12 |
-| | Pilot Contracts Signed | 3 |
-| | Full Contracts Signed | 2 |
+| **KPI Plans** | Qualified Meetings plan | 8 |
+| | Pilot Contracts plan | 2 |
+| | Full Contracts plan | 1 |
+| **Contract actuals** | Qualified Meetings | 8 |
+| | Pilot Contracts Signed | 2 |
+| | Full Contracts Signed | 1 |
 | | Of which Direct Full Contracts | 0 |
-| **Launch actuals** | Pilot Launches | 3 |
-| | Full Commercial Launches | 2 |
+| **Launch actuals** | Pilot Launches | 2 |
+| | Full Commercial Launches | 1 |
 | | Of which Direct Full Commercial Launches | 0 |
 
 A **Direct Full Contract** also counts toward the Pilot Contract KPI. A **Direct Full Commercial Launch** also pays the unpaid Pilot Launch component. Previously paid components are not paid twice.
@@ -130,13 +130,13 @@ Signing the contract, publishing the quest only on Ubego, preparing materials wi
 
 ### 3.7 Standard Full-Time Scenario
 
-Base salary 10,000 ₽ + 12 meetings, 3 Pilot Contracts, 3 Pilot Launches, 2 Full Contracts, 2 Full Commercial Launches → **227,800 ₽**.
+Base salary 10,000 ₽ + 8 meetings, 2 Pilot Contracts, 2 Pilot Launches, 1 Full Contract, 1 Full Commercial Launch → **143,200 ₽**.
 
 Control cases:
 
-*   150%+ example (18 meetings, 5 Pilot Contracts, 3 Full Contracts, 5 Pilot Launches, 3 Full Commercial Launches) → **367,800 ₽**
-*   200% example (24 meetings, 6 Pilot Contracts, 4 Full Contracts, 6 Pilot Launches, 4 Full Commercial Launches) → **492,840 ₽**
-*   Five meetings + one direct Full Contract → **36,000 ₽** (below the 40,000 ₽ control)
+*   150%+ example (12 meetings, 3 Pilot Contracts, 2 Full Contracts, 3 Pilot Launches, 2 Full Commercial Launches) → **248,500 ₽**
+*   200% example (16 meetings, 4 Pilot Contracts, 2 Full Contracts, 4 Pilot Launches, 2 Full Commercial Launches) → **300,960 ₽**
+*   Five meetings + one direct Full Contract → **49,000 ₽** (underperformance on the meetings and pilot plans keeps the payout low)
 
 ---
 
@@ -154,7 +154,7 @@ The application follows the **Ubego Children's Service Design System**.
 
 ### 4.2 Key Components
 1.  **Header:** "Ubego" text logo and link to `ubego.quest`.
-2.  **Hero Section:** Title "КАЛЬКУЛЯТОР ПРЕМИИ" and the 12 → 3 → 2 funnel.
+2.  **Hero Section:** Title "КАЛЬКУЛЯТОР ПРЕМИИ" and the 8 → 2 → 1 funnel.
 3.  **Calculator Interface:**
     *   **Left:** KPI plans, contract track, launch track. Nested "direct full" fields. Launch definition and direct-launch hints.
     *   **Right:** Breakdown cards with KPI progress and total.
@@ -170,12 +170,12 @@ The application follows the **Ubego Children's Service Design System**.
 
 > Полный коммерческий запуск — момент, когда музей разместил все согласованные рекламные и информационные материалы и начал продавать квест своим посетителям. Только подписание договора или техническая готовность сами по себе не считаются полным коммерческим запуском.
 
-**KPI progress example (9 of 12 meetings):**
+**KPI progress example (6 of 8 meetings):**
 
-> 9 из 12
+> 6 из 8
 > Выполнение плана: 75%
 > Текущий коэффициент: ×1,00
-> Ещё 3 встречи → ×1,30 и бонус 10 000 ₽
+> Ещё 2 встречи → ×1,30 и бонус 10 000 ₽
 
 ---
 

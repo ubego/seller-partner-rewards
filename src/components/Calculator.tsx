@@ -154,21 +154,21 @@ export default function Calculator() {
                 name="planMeetings"
                 value={inputs.planMeetings}
                 onChange={handleChange}
-                hint="Целевое количество квалифицированных встреч в месяц. Стандарт: 12."
+                hint="Целевое количество квалифицированных встреч в месяц. Стандарт: 8."
               />
               <InputField
                 label="План пилотных договоров"
                 name="planPilotContracts"
                 value={inputs.planPilotContracts}
                 onChange={handleChange}
-                hint="Целевое количество подписанных пилотных договоров. Стандарт: 3."
+                hint="Целевое количество подписанных пилотных договоров. Стандарт: 2."
               />
               <InputField
                 label="План полных договоров"
                 name="planFullContracts"
                 value={inputs.planFullContracts}
                 onChange={handleChange}
-                hint="Целевое количество подписанных полных договоров. Стандарт: 2."
+                hint="Целевое количество подписанных полных договоров. Стандарт: 1."
               />
             </div>
 
