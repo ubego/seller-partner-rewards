@@ -2,7 +2,7 @@ import { CalculatorInputs, CalculatorResults, KpiBreakdown, NextCoefficientStep 
 
 export const MEETING_REWARD_RATE = 3000;
 export const PILOT_CONTRACT_RATE = 10000;
-export const PILOT_LAUNCH_RATE = 3000;
+export const PILOT_LAUNCH_RATE = 10000;
 export const FULL_CONTRACT_RATE = 20000;
 export const FULL_LAUNCH_RATE = 20000;
 export const MEETINGS_KPI_BONUS = 10000;

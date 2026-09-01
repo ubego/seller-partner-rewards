@@ -10,7 +10,7 @@
 ### 1.1 Purpose
 The **Ubego Seller Partner Reward Calculator** is a web-based Single Page Application (SPA) for the current museum sales compensation model.
 
-The model reflects a realistic workload for a **full-time seller manager working approximately 8 hours per day**.
+The model reflects a realistic workload for a **full-time sales and partner relations manager working approximately 8 hours per day**.
 
 The standard monthly sales expectation is:
 
@@ -24,7 +24,7 @@ Contract signing and operational launch are two separate, additive reward tracks
 *   **Simplicity:** Scenario planning for monthly actuals, including a direct Full Contract or Full Commercial Launch.
 
 ### 1.3 Target Audience
-*   **Primary User:** Seller Partners / Sales Managers engaging with museums.
+*   **Primary User:** Sales and Partner Relations Managers engaging with museums.
 *   **Language:** Russian (RU).
 
 ---
@@ -34,7 +34,7 @@ Contract signing and operational launch are two separate, additive reward tracks
 ### Contract Track
 **Qualified Meeting → Pilot Contract Signed → Full Contract Signed**
 
-Seller-manager commercial achievements with KPI-based compensation.
+Commercial achievements of the sales and partner relations manager with KPI-based compensation.
 
 ### Launch Track
 **Pilot Launch → Full Commercial Launch**
@@ -72,7 +72,7 @@ A **Direct Full Contract** also counts toward the Pilot Contract KPI. A **Direct
 | Base salary | 10,000 ₽ | No |
 | Qualified Meeting | 3,000 ₽ | Yes |
 | Pilot Contract Signed | 10,000 ₽ | Yes |
-| Pilot Launch | 3,000 ₽ | No |
+| Pilot Launch | 10,000 ₽ | No |
 | Full Contract Signed | 20,000 ₽ | Yes |
 | Full Commercial Launch | 20,000 ₽ | No |
 | Qualified Meetings KPI Completion Bonus | 10,000 ₽ / month | No |
@@ -107,7 +107,7 @@ If a museum signs a Full Contract with no previously paid Pilot Contract, it cou
 
 If a museum reaches Full Commercial Launch with no previously paid Pilot Launch:
 
-**3,000 ₽ + 20,000 ₽ = 23,000 ₽**
+**10,000 ₽ + 20,000 ₽ = 30,000 ₽**
 
 Full Contract signing and Full Commercial Launch remain separate milestones.
 
@@ -130,12 +130,12 @@ Signing the contract, publishing the quest only on Ubego, preparing materials wi
 
 ### 3.7 Standard Full-Time Scenario
 
-Base salary 10,000 ₽ + 12 meetings, 3 Pilot Contracts, 3 Pilot Launches, 2 Full Contracts, 2 Full Commercial Launches → **206,800 ₽**.
+Base salary 10,000 ₽ + 12 meetings, 3 Pilot Contracts, 3 Pilot Launches, 2 Full Contracts, 2 Full Commercial Launches → **227,800 ₽**.
 
 Control cases:
 
-*   150%+ example → **316,800 ₽**
-*   200% example → **434,840 ₽**
+*   150%+ example (18 meetings, 5 Pilot Contracts, 3 Full Contracts, 5 Pilot Launches, 3 Full Commercial Launches) → **367,800 ₽**
+*   200% example (24 meetings, 6 Pilot Contracts, 4 Full Contracts, 6 Pilot Launches, 4 Full Commercial Launches) → **492,840 ₽**
 *   Five meetings + one direct Full Contract → **36,000 ₽** (below the 40,000 ₽ control)
 
 ---
@@ -164,7 +164,7 @@ The application follows the **Ubego Children's Service Design System**.
 
 **Direct Full Launch:**
 
-> Если музей сразу выходит на полный коммерческий запуск, без отдельного пилотного запуска, seller manager получает обе ещё не выплаченные части вознаграждения: 3 000 ₽ за пилотный запуск + 20 000 ₽ за полный коммерческий запуск = 23 000 ₽.
+> Если музей сразу выходит на полный коммерческий запуск, без отдельного пилотного запуска, менеджер по продажам и работе с партнерами получает обе ещё не выплаченные части вознаграждения: 10 000 ₽ за пилотный запуск + 20 000 ₽ за полный коммерческий запуск = 30 000 ₽.
 
 **Full Commercial Launch definition:**
 

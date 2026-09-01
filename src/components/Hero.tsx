@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-lg md:text-2xl text-[var(--ubego-text-primary)] font-medium max-w-3xl mx-auto leading-relaxed"
         >
-          Рассчитайте вознаграждение seller manager за встречи, договоры и запуски.
+          Рассчитайте вознаграждение менеджера по продажам и работе с партнерами за встречи, договоры и запуски.
         </motion.p>
       </div>
 
